@@ -1,0 +1,45 @@
+{% extends "booking/base.html" %}
+
+{% block content %}
+
+<h1>Список аудиторий</h1>
+
+<h2>Добавить аудиторию</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" name="add_resource">Добавить</button>
+</form>
+
+<h2>Бронирование аудитории</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ booking_form.as_p }}
+    <button type="submit" name="make_booking">Забронировать</button>
+</form>
+
+<h2>Список аудиторий</h2>
+<ul>
+{% for resource in resources %}
+    <li>
+        {{ resource.name }} - {{ resource.description }}
+        <form method="post" style="display:inline;">
+            {% csrf_token %}
+            <button type="submit" name="delete_resource" value="{{ resource.id }}">Удалить</button>
+        </form>
+    </li>
+{% empty %}
+    <li>Aудиторий пока нет</li>
+{% endfor %}
+</ul>
+
+<h2>Список бронирований</h2>
+<ul>
+{% for booking in bookings %}
+    <li>{{ booking.user_name }} забронировал {{ booking.resource.name }} на {{ booking.date }} {{ booking.time }}</li>
+{% empty %}
+    <li>Бронирований пока нет</li>
+{% endfor %}
+</ul>
+{% endblock %}
+

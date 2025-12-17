@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Система бронирования{% endblock %}</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'booking/style.css' %}">
+</head>
+<body>
+
+<header>
+    <h1>Система бронирования аудитории</h1>
+    <nav>
+        <a href="{% url 'resource_list' %}">Аудитории</a>
+        {% if user.is_authenticated %}
+    		<p>Пользователь: {{ user.username }}! 
+       			<a href="{% url 'logout' %}">Выйти</a>
+    		</p>
+	{% else %}
+		<a href="{% url 'login' %}">Войти</a>
+	{% endif %}
+
+    </nav>
+</header>
+<main>
+    {% block content %}{% endblock %}
+</main>
+
+</body>
+</html>

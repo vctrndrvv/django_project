@@ -1,0 +1,27 @@
+{% extends "booking/base.html" %}
+
+{% block content %}
+<h2>Бронирование: {{ resource.name }}</h2>
+
+
+{% if error %}
+<p style="color:red">{{ error }}</p>
+{% endif %}
+
+<form method="post">
+    {% csrf_token %}
+    <label>Дата:</label>
+
+    <input type="date" name="Дата">
+
+    <label>Начало:</label>
+
+    <input type="time" name="Начало брони">
+
+    <label>Конец:</label>
+
+    <input type="time" name="Конец брони">
+
+    <button type="submit">Забронировать</button>
+</form>
+{% endblock %}

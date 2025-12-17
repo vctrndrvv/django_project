@@ -1,0 +1,120 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f6f1f3;
+    color: #333;
+}
+
+header {
+    background-color: #a24c6a;
+    color: white;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: white;
+    margin-right: 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main {
+    padding: 40px 20px;
+    min-height: 70vh;
+}
+
+
+.booking {
+    max-width: 900px;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+form {
+    width: 50%;
+    padding: 30px;
+    background-color: #fff7f9;
+}
+
+form h2 {
+    color: #a24c6a;
+    margin-bottom: 10px;
+}
+
+form p {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #555;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+button {
+    margin-top: 25px;
+    padding: 12px;
+    background-color: #d58aa8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #c17393;
+    transform: scale(1.05);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+.error {
+    margin-top: 15px;
+    color: #e74c3c;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #eee;
+    margin-top: 40px;
+}
